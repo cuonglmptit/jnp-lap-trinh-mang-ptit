@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient</title>
+    <style>
+        :root{
+            --mau1: yellow;
+            --mau2: red;
+        }
+        .bGradient{
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to right, var(--mau1), var(--mau2));
+            text-align: center;
+        }
+        .alignCenter{
+            padding-top: 15vh;
+        }
+        .h1Large{
+            font-family: sans-serif, Arial;
+            opacity: 50%;
+            font-size: 70px;
+        }
+        .h1Med{
+            font-family: 'Times New Roman', Times, serif;
+            opacity: 50%;
+            font-size: 30px;
+        }
+    </style>
+    <script>
+        var r = document.querySelector(":root");
+        function change(){
+            r.style.setProperty('--mau1', document.getElementById("mau1").value);
+            r.style.setProperty('--mau2', document.getElementById("mau2").value);
+            console.log("mau1:"+document.getElementById("mau1").value);
+            console.log("mau2:"+document.getElementById("mau1").value);
+            displayRGB();
+        }
+        function randomColor(){
+            var randomColor1 = "#"+(Math.floor(Math.random() * 2 ** 24)).toString(16).padStart(6, "0");
+            var randomColor2 = "#"+(Math.floor(Math.random() * 2 ** 24)).toString(16).padStart(6, "0");
+            console.log("mau1:"+randomColor1);
+            console.log("mau2:"+randomColor2);
+            document.getElementById("mau1").value=randomColor1;
+            document.getElementById("mau2").value=randomColor2;
+            r.style.setProperty('--mau1', randomColor1);
+            r.style.setProperty('--mau2', randomColor2);
+        }
+        // function hexToRgb(hex) {
+        //     var bigint = parseInt(hex, 16);
+        //     var r = (bigint >> 16) & 255;
+        //     var g = (bigint >> 8) & 255;
+        //     var b = bigint & 255;
+        //     return r + "," + g + "," + b;
+        // }
+        function displayRGB(){
+            var elem = document.querySelector(".bGradient")
+            var style = getComputedStyle(elem);
+            // document.getElementById("displayRGB").innerHTML = style.backgroundImage+";";
+            document.getElementById("displayRGB").innerHTML = style.getPropertyValue("background-image")+";";
+        }
+        // window.onload = displayRGB;
+    </script>
+</head>
+<body class="bGradient" onload="displayRGB()">
+    <div class="alignCenter">
+        <h1 class="h1Large">B20DCCN100</h1>
+        <h1 class="h1Large">B&thinsp; A&thinsp; C&thinsp; K&thinsp; G&thinsp; R&thinsp; O&thinsp; U&thinsp; N&thinsp; D&thinsp;<br>G&thinsp; E&thinsp; N&thinsp; E&thinsp; R&thinsp; A&thinsp; T&thinsp; O&thinsp; R</h1>
+        <input type="color" value="#FFFF00" id="mau1" onfocusout="change()">
+        <input type="color" value="#FF0000" id="mau2" onfocusout="change()">
+        <button onclick="randomColor(), displayRGB()">Random</button>
+        <h1 class="h1Med">Đ Â Y &thinsp; L À &thinsp; B A C K G R O U N D</h1>
+        <h1 id="displayRGB" style="font-family: sans-serif, Arial; font-size: 25px; opacity: 50%;"></h1>
+    </div>
+</body>
+</html>

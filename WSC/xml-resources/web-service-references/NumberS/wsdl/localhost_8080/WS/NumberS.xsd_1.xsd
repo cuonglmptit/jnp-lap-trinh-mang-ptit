@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (https://github.com/eclipse-ee4j/metro-jax-ws). RI's version is Metro/2.4.4 (RELEASE-2.4.4-ce05bec; 2020-04-17T12:44:48+0000) JAXWS-RI/2.3.3 JAXWS-API/2.3.3 JAXB-RI/2.3.3 JAXB-API/2.3.3 git-revision#unknown. --><xs:schema xmlns:tns="http://cuongacquy.ptit/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://cuongacquy.ptit/">
+
+<xs:element name="getNumber" type="tns:getNumber"/>
+
+<xs:element name="getNumberResponse" type="tns:getNumberResponse"/>
+
+<xs:element name="greatestNumber" type="tns:greatestNumber"/>
+
+<xs:element name="greatestNumberResponse" type="tns:greatestNumberResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getNumber">
+<xs:sequence>
+<xs:element name="msv" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getNumberResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="greatestNumber">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="number" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="greatestNumberResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
